@@ -1,32 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
-
-/* Font fallback that closely matches Inter metrics */
-@font-face {
-  font-family: "Inter Fallback";
-  size-adjust: 107%;
-  ascent-override: 90%;
-  src: local("Arial");
-}
-
 :root {
-  font-family:
-    Inter,
-    "Inter Fallback",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
 }
 
 * {
@@ -45,7 +23,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
-  color: #1a1a1a;
+  color: light-dark(#1a1a1a, #ffffff);
 }
 
 h1,
@@ -59,10 +37,10 @@ h6 {
 }
 
 a {
-  color: #444444;
+  color: light-dark(#444444, #bbbbbb);
 }
 a:hover {
-  color: #888888;
+  color: light-dark(#888888, #dddddd);
 }
 
 button {
@@ -95,15 +73,15 @@ textarea {
 /* Update url-input width to be 100% since container will control max width */
 .url-input {
   padding: 8px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid light-dark(#ddd, #222);
   border-radius: 4px;
   width: 100%;
-  background: #f5f5f5;
+  background: light-dark(#f5f5f5, #1a1a1a);
 }
 
 .copy-button {
   padding: 8px;
-  color: #666;
+  color: light-dark(#666, #aaa);
   border-radius: 4px;
   transition: all 0.2s;
   display: flex;
@@ -112,11 +90,11 @@ textarea {
 }
 
 .copy-button:hover {
-  background: #f0f0f0;
+  background: light-dark(#f0f0f0, #222);
 }
 
 .copy-button:active {
-  background: #e5e5e5;
+  background: light-dark(#e5e5e5, #444);
 }
 
 .copy-button img {
@@ -136,15 +114,15 @@ textarea {
   right: 0;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: light-dark(#666, #aaa);
 }
 
 .footer a {
-  color: #666;
+  color: light-dark(#666, #aaa);
   text-decoration: none;
   font-weight: 500;
 }
 
 .footer a:hover {
-  color: #333;
+  color: light-dark(#333, #ddd);
 }

@@ -16,7 +16,7 @@ function noSearchDefaultPageRender() {
             readonly 
           />
           <button class="copy-button">
-            <img src="/clipboard.svg" alt="Copy" />
+            <img src="/unduck/clipboard.svg" alt="Copy" />
           </button>
         </div>
       </div>
@@ -26,6 +26,8 @@ function noSearchDefaultPageRender() {
         <a href="https://x.com/theo" target="_blank">theo</a>
         •
         <a href="https://github.com/t3dotgg/unduck" target="_blank">github</a>
+        •
+        <a href="https://github.com/MoeDevelops/unduck" target="_blank">fork</a>
       </footer>
     </div>
   `;
@@ -36,10 +38,10 @@ function noSearchDefaultPageRender() {
 
   copyButton.addEventListener("click", async () => {
     await navigator.clipboard.writeText(urlInput.value);
-    copyIcon.src = "/clipboard-check.svg";
+    copyIcon.src = "/unduck/clipboard-check.svg";
 
     setTimeout(() => {
-      copyIcon.src = "/clipboard.svg";
+      copyIcon.src = "/unduck/clipboard.svg";
     }, 2000);
   });
 }
