@@ -12,7 +12,7 @@ function noSearchDefaultPageRender() {
           <input 
             type="text" 
             class="url-input"
-            value="https://unduck.link?q=%s"
+            value="https://moedevelops.github.io/unduck?b=g&q=%s"
             readonly 
           />
           <button class="copy-button">
@@ -50,6 +50,7 @@ const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
 function getBangredirectUrl() {
   const url = new URL(window.location.href);
   const query = url.searchParams.get("q")?.trim() ?? "";
+
   if (!query) {
     noSearchDefaultPageRender();
     return null;
@@ -57,8 +58,12 @@ function getBangredirectUrl() {
 
   const match = query.match(/!(\S+)/i);
 
+  const urlBangParam = url.searchParams.get("b")?.trim();
+  const urlBang = bangs.find((b) => b.t === urlBangParam);
+
   const bangCandidate = match?.[1]?.toLowerCase();
-  const selectedBang = bangs.find((b) => b.t === bangCandidate) ?? defaultBang;
+  const selectedBang =
+    bangs.find((b) => b.t === bangCandidate) ?? urlBang ?? defaultBang;
 
   // Remove the first bang from the query
   const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
